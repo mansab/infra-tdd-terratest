@@ -13,9 +13,9 @@ func TestPodTemplateRendersContainerImage(t *testing.T) {
 	helmChartPath := "../charts/minimal-pod"
 
 	// Setup the args. For this test, we will set the following input values:
-	// - image=nginx:1.15.8
+	// - image=nginx:1.16.0
 	options := &helm.Options{
-		SetValues: map[string]string{"image": "nginx:1.15.8"},
+		SetValues: map[string]string{"image": "nginx:1.16.0"},
 	}
 
 	// Run RenderTemplate to render the template and capture the output.
@@ -27,7 +27,7 @@ func TestPodTemplateRendersContainerImage(t *testing.T) {
 	helm.UnmarshalK8SYaml(t, output, &pod)
 
 	// Finally, we verify the pod spec is set to the expected container image value
-	expectedContainerImage := "nginx:1.15.8"
+	expectedContainerImage := "nginx:1.16.0"
 	podContainers := pod.Spec.Containers
 	if podContainers[0].Image != expectedContainerImage {
 		t.Fatalf("Rendered container image (%s) is not expected (%s)", podContainers[0].Image, expectedContainerImage)

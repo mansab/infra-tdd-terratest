@@ -24,9 +24,9 @@ func TestPodDeploysContainerImage(t *testing.T) {
 	kubectlOptions.Namespace = "default"
 
 	// Setup the args. For this test, we will set the following input values:
-	// - image=nginx:1.15.8
+	// - image=nginx:1.16.0
 	options := &helm.Options{
-		SetValues: map[string]string{"image": "nginx:1.15.8"},
+		SetValues: map[string]string{"image": "nginx:1.16.0"},
 	}
 
 	// We generate a unique release name so that we can refer to after deployment.
