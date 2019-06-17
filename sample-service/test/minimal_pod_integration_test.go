@@ -48,7 +48,7 @@ func TestPodDeploysContainerImage(t *testing.T) {
 // verifyNginxPod will open a tunnel to the Pod and hit the endpoint to verify the nginx welcome page is shown.
 func verifyNginxPod(t *testing.T, kubectlOptions *k8s.KubectlOptions, podName string) {
 	// Wait for the pod to come up. It takes some time for the Pod to start, so retry a few times.
-	retries := 15
+	retries := 3
 	sleep := 5 * time.Second
 	k8s.WaitUntilPodAvailable(t, kubectlOptions, podName, retries, sleep)
 
