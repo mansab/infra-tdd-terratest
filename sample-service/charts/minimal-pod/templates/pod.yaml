@@ -13,5 +13,5 @@ spec:
       image: "{{ .Values.image }}"
       ports:
         - name: http
-          containerPort: 8080
+          containerPort: 80
           protocol: TCP
