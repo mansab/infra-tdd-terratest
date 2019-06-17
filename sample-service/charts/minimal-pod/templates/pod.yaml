@@ -9,9 +9,9 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   containers:
-    - name: {{ .Chart.Name }}
-      image: "{{ .Values.image }}"
+  - name: {{ .Chart.Name }}
+    image: "{{ .Values.image }}"
       ports:
         - name: http
-          containerPort: 80
+          containerPort: 8080
           protocol: TCP
