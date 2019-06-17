@@ -63,10 +63,10 @@ func verifyNginxPod(t *testing.T, kubectlOptions *k8s.KubectlOptions, podName st
 	http_helper.HttpGetWithRetryWithCustomValidation(
 		t,
 		endpoint,
-		retries,
+		1,
 		sleep,
 		func(statusCode int, body string) bool {
-			return statusCode == 200 && strings.Contains(body, "Welcome to nginx")
+			return statusCode == 200 && strings.Contains(body, "OK!")
 		},
 	)
 }
