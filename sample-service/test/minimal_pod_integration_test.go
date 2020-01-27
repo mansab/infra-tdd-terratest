@@ -66,7 +66,7 @@ func verifyNginxPod(t *testing.T, kubectlOptions *k8s.KubectlOptions, podName st
 		1,
 		sleep,
 		func(statusCode int, body string) bool {
-			return statusCode == 200 && strings.Contains(body, "OK!")
+			return statusCode == 200 && strings.Contains(body, "Welcome to nginx!")
 		},
 	)
 }
