@@ -3,7 +3,7 @@ require "docker"
 
 describe "Dockerfile-Builder" do
   before(:all) do
-    image = Docker::Image.build_from_dir('..', opts = {'target'=>'builder', 'f'=>'quotes/Dockerfile'})
+    image = Docker::Image.build_from_dir('..', opts = {'target'=>'builder', 'dockerfile'=>'quotes/Dockerfile'})
 
     # .build(commands, opts = {}, connection = Docker.connection, &block) ⇒ Object
 
