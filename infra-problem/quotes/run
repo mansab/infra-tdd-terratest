@@ -1,3 +1,0 @@
-bundle config set path 'vendor/bundle'
-bundle install
-bundle exec rspec spec/sample_service.rb
